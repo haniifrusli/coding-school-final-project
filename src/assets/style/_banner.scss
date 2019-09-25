@@ -1,0 +1,51 @@
+@import '@/assets/style/base.scss';
+
+.home-banner-large {
+  @include card-1;
+  float: left;
+  width: 100%;
+  .banner-overlay {
+    background-color: rgba(0,0,0,0.4);
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+  }
+  .banner-contents {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .banner-title {
+    font-size: 1.4em;
+    line-height: 1;
+    margin-bottom: 5px;
+    @media screen and (max-width: 768px) {
+      font-size: 1.2em;
+    }
+  }
+  .banner-subtitle {
+    font-size: 3em;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 30px;
+    @media screen and (max-width: 768px) {
+      font-size: 2em;
+    }
+  }
+  .banner-btn {
+    float: none;
+    width: auto;
+    padding: 10px 25px;
+  }
+}
+//BANNER SMALL
+.home-banner-small {
+  @include card-1;
+  float: left;
+  width: 100%;
+}
