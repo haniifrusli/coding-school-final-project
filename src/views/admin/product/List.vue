@@ -6,11 +6,13 @@
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Address</th>
+          <th scope="col">Image</th>
           <th scope="col" colspan="2">Action</th>
         </tr>
         <tr v-for="(customersRow, index) in customers" :key="index">
           <td v-text="customersRow.name"></td>
           <td v-text="customersRow.address"></td>
+          <td><img :src="customersRow.image"></td>
           <td><router-link :to="'/admin/product/update/'+customersRow.id"><button class="btn btn-info">Edit</button></router-link></td>
           <td><a href="#" class="btn btn-danger">Delete</a></td>
         </tr>
@@ -39,7 +41,13 @@ export default {
     this.getData()
   },
   methods: {
-    
+    getData () {
+      var self = this
+      this.$axios.get('http://localhost:3000/findAll').then(function (response) {
+        self.customers = response.data
+        console.log(self.customers)
+      })
+    }
   }
 }
 </script>
